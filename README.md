@@ -2,11 +2,9 @@
 Scikit-learn-compatible Kernel Discriminant Analysis
 
 ## Status
-[![Build Status](https://travis-ci.org/daviddiazvico/scikit-kda.svg?branch=master)](https://travis-ci.org/daviddiazvico/scikit-kda)
-[![Coverage Status](https://coveralls.io/repos/github/daviddiazvico/scikit-kda/badge.svg)](https://coveralls.io/github/daviddiazvico/scikit-kda)
+[![Build Status](https://travis-ci.com/daviddiazvico/scikit-kda.svg?branch=master)](https://travis-ci.com/daviddiazvico/scikit-kda)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a37c9ee152b41a0cb577/maintainability)](https://codeclimate.com/github/daviddiazvico/scikit-kda/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a37c9ee152b41a0cb577/test_coverage)](https://codeclimate.com/github/daviddiazvico/scikit-kda/test_coverage)
-[![Code Health](https://landscape.io/github/daviddiazvico/scikit-kda/master/landscape.svg?style=flat)](https://landscape.io/github/daviddiazvico/scikit-kda/master)
 
 ## Installation
 Available in [PyPI](https://pypi.python.org/pypi?:action=display&name=scikit-kda)
