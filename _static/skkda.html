@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>skkda package &#8212; scikit-kda 0.1.0 documentation</title>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="skkda-package">
+<h1>skkda package<a class="headerlink" href="#skkda-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-skkda.base">
+<span id="skkda-base-module"></span><h2>skkda.base module<a class="headerlink" href="#module-skkda.base" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn-compatible Kernel Discriminant Analysis.</p>
+<p>Used in
+David Diaz-Vico, Jose R. Dorronsoro
+“Deep vs Kernel Fisher Discriminant Analysis”</p>
+<p>Based on algorithm 5 in
+Zhihua Zhang, Guang Dai, Congfu Xu, Michael I. Jordan
+“Regularized Discriminant Analysis, Ridge Regression and Beyond”
+<a class="reference external" href="http://www.jmlr.org/papers/v11/zhang10b.html">http://www.jmlr.org/papers/v11/zhang10b.html</a></p>
+<p>&#64;author: David Diaz Vico
+&#64;license: MIT</p>
+<dl class="class">
+<dt id="skkda.base.KernelDiscriminantAnalysis">
+<em class="property">class </em><code class="descclassname">skkda.base.</code><code class="descname">KernelDiscriminantAnalysis</code><span class="sig-paren">(</span><em>lmb=0.001</em>, <em>kernel='rbf'</em>, <em>degree=3</em>, <em>gamma=None</em>, <em>coef0=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skkda/base.html#KernelDiscriminantAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skkda.base.KernelDiscriminantAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Kernel Discriminant Analysis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lmb</strong> (<em>float</em><em> (</em><em>&gt;= 0.0</em><em>)</em><em>, </em><em>default=0.001</em>) – Regularization parameter</li>
+<li><strong>kernel</strong> (<em>{&quot;chi2&quot;</em><em>, </em><em>&quot;laplacian&quot;</em><em>, </em><em>&quot;linear&quot;</em><em>, </em><em>&quot;polynomial&quot;</em><em>, </em><em>&quot;rbf&quot;</em><em>, </em><em>&quot;sigmoid&quot;}</em><em>,</em>) – default=’rbf’
+Kernel.</li>
+<li><strong>degree</strong> (<em>integer</em><em>, </em><em>default=3</em>) – </li>
+<li><strong>gamma</strong> (<em>float</em><em>, </em><em>default=None</em>) – </li>
+<li><strong>coef0</strong> (<em>integer</em><em>, </em><em>default=1</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skkda.base.KernelDiscriminantAnalysis.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skkda/base.html#KernelDiscriminantAnalysis.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skkda.base.KernelDiscriminantAnalysis.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit KFDA model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>numpy array of shape</em><em> [</em><em>n_samples</em><em>, </em><em>n_features</em><em>]</em>) – Training set.</li>
+<li><strong>y</strong> (<em>numpy array of shape</em><em> [</em><em>n_samples</em><em>]</em>) – Target values. Only works for 2 classes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">self</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skkda.base.KernelDiscriminantAnalysis.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skkda/base.html#KernelDiscriminantAnalysis.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skkda.base.KernelDiscriminantAnalysis.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform data with the trained KFDA model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>numpy array of shape</em><em> [</em><em>n_samples</em><em>, </em><em>n_features</em><em>]</em>) – The input data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>y_pred</strong> – Transformations for X.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array-like, shape (n_samples, targets_shape)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-skkda">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-skkda" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn-compatible Kernel Discriminant Analysis.</p>
+<p>&#64;author: David Diaz Vico
+&#64;license: MIT</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">skkda package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-skkda.base">skkda.base module</a></li>
+<li><a class="reference internal" href="#module-skkda">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_static/skkda.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, David Diaz Vico.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/_static/skkda.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
