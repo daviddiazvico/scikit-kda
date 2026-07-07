@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scikit-kda"
+version = "0.1.2"
+description = "Scikit-learn-compatible Kernel Discriminant Analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "David Diaz Vico", email = "david.diaz.vico@outlook.com" }]
+keywords = ["kda", "scikit-learn"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = ["scikit-learn>=1.4"]
+
+[project.optional-dependencies]
+test = ["coverage", "pytest", "pytest-cov"]
+docs = ["sphinx>=8", "pydata-sphinx-theme>=0.16"]
+
+[project.urls]
+Homepage = "https://github.com/daviddiazvico/scikit-kda"
+Documentation = "https://daviddiazvico.github.io/scikit-kda/"
+Repository = "https://github.com/daviddiazvico/scikit-kda"
+Issues = "https://github.com/daviddiazvico/scikit-kda/issues"
+Changelog = "https://github.com/daviddiazvico/scikit-kda/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+include = ["skkda*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--doctest-modules", "--cov=skkda", "--cov-branch", "--cov-report=term-missing"]
+
+[tool.coverage.report]
+omit = ["*/python?.?/*", "*/site-packages/nose/*", "*__init__*"]
+
+[tool.coverage.run]
+branch = true
+source = ["skkda"]
